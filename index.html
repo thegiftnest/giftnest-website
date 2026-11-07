@@ -21,7 +21,7 @@ body {
 
 header {
   background: #ffffff;
-  padding: 16px 7%;
+  padding: 12px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,10 +31,11 @@ header {
   box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
-.logo {
-  color: #397fae;
-  font-size: 25px;
-  font-weight: 700;
+.brand-logo {
+  height: 55px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
 }
 
 nav a {
@@ -45,30 +46,14 @@ nav a {
 }
 
 .hero {
-  background: linear-gradient(135deg, #dff3ff, #f5fbff);
-  text-align: center;
-  padding: 85px 20px;
+  width: 100%;
+  background: #eaf6ff;
 }
 
-.hero h1 {
-  font-size: 42px;
-  color: #245c83;
-  margin-bottom: 12px;
-}
-
-.hero p {
-  font-size: 17px;
-  margin-bottom: 25px;
-}
-
-.btn {
-  display: inline-block;
-  background: #397fae;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 600;
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 section {
@@ -120,6 +105,15 @@ section {
   background: #f5faff;
 }
 
+.collection-image {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
 .why-card {
   background: white;
   border: 1px solid #eee;
@@ -133,12 +127,31 @@ section {
   margin: 12px 0 22px;
 }
 
-footer {
-  background: #263746;
+.btn {
+  display: inline-block;
+  background: #397fae;
   color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  background: #ffffff;
+  color: #285e80;
   text-align: center;
-  padding: 22px;
+  padding: 25px;
   font-size: 14px;
+  border-top: 1px solid #e5f1f8;
+}
+
+.footer-logo {
+  height: 55px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  margin-bottom: 10px;
 }
 
 footer span {
@@ -156,12 +169,12 @@ footer span {
     font-size: 13px;
   }
 
-  .hero h1 {
-    font-size: 32px;
-  }
-
   section {
     padding: 48px 6%;
+  }
+
+  .section-title {
+    font-size: 25px;
   }
 }
 </style>
@@ -170,7 +183,12 @@ footer span {
 <body>
 
 <header>
-  <div class="logo">🐦 Gift Nest</div>
+  <a href="#home">
+    <img class="brand-logo"
+      src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
+      alt="Gift Nest Logo">
+  </a>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#gifts">Gifts</a>
@@ -180,9 +198,9 @@ footer span {
 </header>
 
 <section class="hero" id="home">
-  <h1>Little Gifts, Lovely Memories ♡</h1>
-  <p>Gifts for Every Happy Moment</p>
-  <a href="#gifts" class="btn">Explore Gifts</a>
+  <img
+    src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM.jpeg"
+    alt="Gift Nest - Main Banner">
 </section>
 
 <section id="gifts">
@@ -214,25 +232,10 @@ footer span {
   <h2 class="section-title">Our Collection</h2>
   <p class="section-subtitle">A little happiness in every gift ♡</p>
 
-  <div class="grid">
-    <div class="card">
-      <div class="emoji">🎁</div>
-      <h3>Gift Collection</h3>
-      <p>Explore our lovely gift choices.</p>
-    </div>
-
-    <div class="card">
-      <div class="emoji">🧸</div>
-      <h3>Kids Collection</h3>
-      <p>Special picks for little smiles.</p>
-    </div>
-
-    <div class="card">
-      <div class="emoji">🎀</div>
-      <h3>Return Gift Collection</h3>
-      <p>Little gifts, lovely memories.</p>
-    </div>
-  </div>
+  <img
+    class="collection-image"
+    src="WhatsApp%20Image%202026-11-07%20at%2010.31.08%20PM.jpeg"
+    alt="Gift Nest Four Gift Collection">
 </section>
 
 <section>
@@ -267,6 +270,11 @@ footer span {
 </section>
 
 <footer>
+  <img
+    class="footer-logo"
+    src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
+    alt="Gift Nest Logo">
+
   <p>© 2026 Gift Nest. Made with <span>♡</span> for every happy moment.</p>
 </footer>
 
