@@ -4,142 +4,270 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gift Nest | Little Gifts, Lovely Memories</title>
+
 <style>
-* { box-sizing: border-box; }
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  color: #292d38;
-  background: #fff;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
+
+body {
+  background: #ffffff;
+  color: #252525;
+  line-height: 1.6;
+}
+
 header {
-  padding: 22px 7%;
+  background: #ffffff;
+  padding: 16px 7%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #e8f5ff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
-.logo { font-size: 25px; font-weight: bold; }
-.logo span { color: #e99a50; }
+
+.logo {
+  color: #397fae;
+  font-size: 25px;
+  font-weight: 700;
+}
+
 nav a {
-  margin-left: 18px;
   text-decoration: none;
-  color: #292d38;
+  color: #333;
+  margin-left: 22px;
+  font-size: 14px;
 }
+
 .hero {
+  background: linear-gradient(135deg, #dff3ff, #f5fbff);
   text-align: center;
-  padding: 75px 20px;
-  background: #e8f5ff;
+  padding: 85px 20px;
 }
-.hero h1 { font-size: 42px; margin: 10px; }
-.hero p { font-size: 18px; }
+
+.hero h1 {
+  font-size: 42px;
+  color: #245c83;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
 .btn {
   display: inline-block;
-  padding: 13px 24px;
-  background: #303b50;
+  background: #397fae;
   color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
   text-decoration: none;
-  border-radius: 7px;
-  margin-top: 15px;
+  font-weight: 600;
 }
-section { padding: 45px 7%; text-align: center; }
-h2 { font-size: 28px; }
-.categories, .products {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-.item {
-  background: #f3f9ff;
-  padding: 25px;
-  border-radius: 12px;
-  width: 240px;
-}
-.item .emoji { font-size: 48px; }
-.item p { color: #626b78; }
-.order {
-  color: #26364d;
-  font-weight: bold;
-  text-decoration: none;
-}
-footer {
-  padding: 30px;
+
+section {
+  padding: 65px 7%;
   text-align: center;
-  background: #e8f5ff;
+}
+
+.section-title {
+  font-size: 29px;
+  color: #285e80;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #777;
+  margin-bottom: 35px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: #f7fbff;
+  padding: 28px 18px;
+  border-radius: 15px;
+  border: 1px solid #e5f1f8;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+}
+
+.card .emoji {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  color: #315f7d;
+  margin-bottom: 8px;
+}
+
+.collection {
+  background: #f5faff;
+}
+
+.why-card {
+  background: white;
+  border: 1px solid #eee;
+}
+
+.contact {
+  background: #e9f6ff;
+}
+
+.contact p {
+  margin: 12px 0 22px;
+}
+
+footer {
+  background: #263746;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+}
+
+footer span {
+  color: #ffb36b;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav a {
+    margin: 0 8px;
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  section {
+    padding: 48px 6%;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">🐦 Gift <span>Nest</span></div>
+  <div class="logo">🐦 Gift Nest</div>
   <nav>
     <a href="#home">Home</a>
     <a href="#gifts">Gifts</a>
+    <a href="#collection">Collection</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<div class="hero" id="home">
+<section class="hero" id="home">
   <h1>Little Gifts, Lovely Memories ♡</h1>
-  <p>Find something special for every happy moment.</p>
-  <a class="btn" href="#gifts">Explore Gifts</a>
-</div>
-
-<section>
-  <h2>What Are You Looking For?</h2>
-  <div class="categories">
-    <div class="item">
-      <div class="emoji">🧸</div>
-      <h3>Kids' Gifts</h3>
-    </div>
-    <div class="item">
-      <div class="emoji">🎁</div>
-      <h3>Return Gifts</h3>
-    </div>
-    <div class="item">
-      <div class="emoji">💝</div>
-      <h3>Special Gifts</h3>
-    </div>
-  </div>
+  <p>Gifts for Every Happy Moment</p>
+  <a href="#gifts" class="btn">Explore Gifts</a>
 </section>
 
 <section id="gifts">
-  <h2>Our Gift Collection</h2>
-  <p>Lovely little gifts for your special moments.</p>
-  <div class="products">
-    <div class="item">
-      <div class="emoji">🎀</div>
-      <h3>Kids' Gift Sets</h3>
-      <p>Thoughtful gifts for little ones.</p>
-      <a class="order" href="#contact">Enquire Now</a>
-    </div>
-    <div class="item">
+  <h2 class="section-title">Our Gift Categories</h2>
+  <p class="section-subtitle">Find something special for every occasion</p>
+
+  <div class="grid">
+    <div class="card">
       <div class="emoji">🎁</div>
-      <h3>Return Gift Sets</h3>
-      <p>Make every celebration memorable.</p>
-      <a class="order" href="#contact">Enquire Now</a>
+      <h3>Kids' Gifts</h3>
+      <p>Lovely gifts for little ones.</p>
     </div>
-    <div class="item">
-      <div class="emoji">🧸</div>
+
+    <div class="card">
+      <div class="emoji">🎀</div>
+      <h3>Return Gifts</h3>
+      <p>Make every celebration memorable.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">💝</div>
       <h3>Special Gifts</h3>
-      <p>Little surprises filled with love.</p>
-      <a class="order" href="#contact">Enquire Now</a>
+      <p>Thoughtful gifts for happy moments.</p>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <h2>Let's Make Someone Smile ♡</h2>
-  <p>Have something in mind? Contact us for orders and enquiries.</p>
-  <p>WhatsApp ordering coming soon!</p>
+<section class="collection" id="collection">
+  <h2 class="section-title">Our Collection</h2>
+  <p class="section-subtitle">A little happiness in every gift ♡</p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="emoji">🎁</div>
+      <h3>Gift Collection</h3>
+      <p>Explore our lovely gift choices.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🧸</div>
+      <h3>Kids Collection</h3>
+      <p>Special picks for little smiles.</p>
+    </div>
+
+    <div class="card">
+      <div class="emoji">🎀</div>
+      <h3>Return Gift Collection</h3>
+      <p>Little gifts, lovely memories.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Why Choose Gift Nest?</h2>
+  <p class="section-subtitle">Making gifting simple and special</p>
+
+  <div class="grid">
+    <div class="card why-card">
+      <div class="emoji">💗</div>
+      <h3>Thoughtful Choices</h3>
+      <p>Gifts selected with care.</p>
+    </div>
+
+    <div class="card why-card">
+      <div class="emoji">✨</div>
+      <h3>Quality</h3>
+      <p>We value quality and customer satisfaction.</p>
+    </div>
+
+    <div class="card why-card">
+      <div class="emoji">📦</div>
+      <h3>Safe Delivery</h3>
+      <p>Safe and timely delivery.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Let's Make Someone Smile!</h2>
+  <p>Have a gift in mind? Get in touch with us.</p>
+  <a href="mailto:thegiftnest@gmail.com" class="btn">Contact Us</a>
 </section>
 
 <footer>
-  <div class="logo">🐦 Gift <span>Nest</span></div>
-  <p>Gifts for Every Happy Moment ♡</p>
-  <p>Safe and timely delivery.</p>
+  <p>© 2026 Gift Nest. Made with <span>♡</span> for every happy moment.</p>
 </footer>
 
 </body>
