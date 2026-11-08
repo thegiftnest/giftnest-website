@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -119,6 +120,43 @@ section {
 .card p {
   color: #7d8998;
   font-size: 14px;
+}
+
+/* Clickable Gift Categories */
+.category-card {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  appearance: none;
+}
+
+.category-card:focus-visible {
+  outline: 3px solid #789cba;
+  outline-offset: 4px;
+}
+
+.category-preview {
+  margin-top: 35px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e4eff7;
+  box-shadow: 0 5px 20px rgba(80,110,140,0.04);
+}
+
+.category-preview[hidden] {
+  display: none;
+}
+
+.category-preview img {
+  display: block;
+  width: 100%;
+  max-width: 950px;
+  height: auto;
+  margin: 20px auto 0;
+  border-radius: 15px;
 }
 
 .collection {
@@ -295,6 +333,10 @@ footer span {
   .review-box {
     padding: 24px 17px;
   }
+
+  .category-preview {
+    padding: 12px;
+  }
 }
 </style>
 </head>
@@ -307,6 +349,7 @@ footer span {
       src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
       alt="Gift Nest Logo">
   </a>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#gifts">Gifts</a>
@@ -323,26 +366,46 @@ footer span {
 
 <section id="gifts">
   <h2 class="section-title">Our Gift Categories</h2>
-  <p class="section-subtitle">Thoughtful little gifts for every special moment.</p>
+  <p class="section-subtitle">
+    Thoughtful little gifts for every special moment.
+  </p>
 
   <div class="grid">
-    <div class="card">
+
+    <button type="button" class="card category-card"
+      data-title="Kids' Gifts"
+      data-image="kids_gifts.png"
+      aria-controls="categoryPreview">
       <div class="card-icon">♡</div>
       <h3>Kids' Gifts</h3>
       <p>Lovely gifts for little ones.</p>
-    </div>
+    </button>
 
-    <div class="card">
+    <button type="button" class="card category-card"
+      data-title="Return Gifts"
+      data-image="return_gifts.png"
+      aria-controls="categoryPreview">
       <div class="card-icon">✿</div>
       <h3>Return Gifts</h3>
       <p>Make every celebration memorable.</p>
-    </div>
+    </button>
 
-    <div class="card">
+    <button type="button" class="card category-card"
+      data-title="Special Gifts"
+      data-image="special_gifts.png"
+      aria-controls="categoryPreview">
       <div class="card-icon">✧</div>
       <h3>Special Gifts</h3>
       <p>Thoughtful gifts for happy moments.</p>
-    </div>
+    </button>
+
+  </div>
+
+  <div class="category-preview" id="categoryPreview" hidden>
+    <h2 class="section-title" id="categoryTitle"></h2>
+    <img id="categoryImage"
+      src=""
+      alt="Selected Gift Category">
   </div>
 </section>
 
@@ -358,9 +421,12 @@ footer span {
 
 <section>
   <h2 class="section-title">Why Choose Gift Nest?</h2>
-  <p class="section-subtitle">Little details that make gifting special.</p>
+  <p class="section-subtitle">
+    Little details that make gifting special.
+  </p>
 
   <div class="grid">
+
     <div class="card why-card">
       <div class="card-icon">♡</div>
       <h3>Thoughtfully Chosen</h3>
@@ -378,6 +444,7 @@ footer span {
       <h3>Safe Delivery</h3>
       <p>Carefully packed and delivered safely.</p>
     </div>
+
   </div>
 </section>
 
@@ -386,32 +453,48 @@ footer span {
   <p class="section-subtitle">Your feedback makes us smile.</p>
 
   <div class="review-box">
-    <h3 style="color:#617991;font-weight:500;">Share Your Experience</h3>
+    <h3 style="color:#617991;font-weight:500;">
+      Share Your Experience
+    </h3>
     <p>We'd love to hear from you!</p>
 
     <form id="reviewForm">
+
       <label class="field-label">Rate your experience *</label>
 
       <div class="stars">
         <input type="radio" id="star5" name="rating" value="5" required>
         <label for="star5">★</label>
+
         <input type="radio" id="star4" name="rating" value="4">
         <label for="star4">★</label>
+
         <input type="radio" id="star3" name="rating" value="3">
         <label for="star3">★</label>
+
         <input type="radio" id="star2" name="rating" value="2">
         <label for="star2">★</label>
+
         <input type="radio" id="star1" name="rating" value="1">
         <label for="star1">★</label>
       </div>
 
-      <label class="field-label" for="reviewName">Your name (optional)</label>
-      <input type="text" id="reviewName" placeholder="Enter your name">
+      <label class="field-label" for="reviewName">
+        Your name (optional)
+      </label>
+      <input type="text" id="reviewName"
+        placeholder="Enter your name">
 
-      <label class="field-label" for="reviewText">Your review (optional)</label>
-      <textarea id="reviewText" placeholder="Write your experience..."></textarea>
+      <label class="field-label" for="reviewText">
+        Your review (optional)
+      </label>
+      <textarea id="reviewText"
+        placeholder="Write your experience..."></textarea>
 
-      <button type="submit" class="submit-btn">Submit Review</button>
+      <button type="submit" class="submit-btn">
+        Submit Review
+      </button>
+
     </form>
   </div>
 </section>
@@ -419,7 +502,9 @@ footer span {
 <section class="contact" id="contact">
   <h2 class="section-title">Let's Make Someone Smile!</h2>
   <p>Have a gift in mind? Get in touch with us.</p>
-  <a href="mailto:thegiftnest@gmail.com" class="btn">Contact Us</a>
+  <a href="mailto:thegiftnest@gmail.com" class="btn">
+    Contact Us
+  </a>
 </section>
 
 <footer>
@@ -428,14 +513,43 @@ footer span {
     src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
     alt="Gift Nest Logo">
 
-  <p>© 2026 Gift Nest. Made with <span>♡</span> for every happy moment.</p>
+  <p>
+    © 2026 Gift Nest. Made with
+    <span>♡</span> for every happy moment.
+  </p>
 </footer>
 
 <script>
+
+// Gift Category Image Switching
+document.querySelectorAll(".category-card").forEach(function(card) {
+
+  card.addEventListener("click", function() {
+
+    const title = this.dataset.title;
+    const image = this.dataset.image;
+
+    document.getElementById("categoryTitle").textContent = title;
+
+    const previewImage = document.getElementById("categoryImage");
+
+    previewImage.src = image;
+    previewImage.alt = title;
+
+    const preview = document.getElementById("categoryPreview");
+    preview.hidden = false;
+
+  });
+
+});
+
+// Customer Review Form
 document.getElementById("reviewForm").addEventListener("submit", function(event) {
+
   event.preventDefault();
 
   const rating = document.querySelector('input[name="rating"]:checked');
+
   if (!rating) {
     alert("Please select a star rating.");
     return;
@@ -445,6 +559,7 @@ document.getElementById("reviewForm").addEventListener("submit", function(event)
   const review = document.getElementById("reviewText").value.trim() || "No written review";
 
   const subject = encodeURIComponent("Gift Nest Customer Review");
+
   const body = encodeURIComponent(
     "Rating: " + rating.value + "/5 stars\n" +
     "Name: " + name + "\n" +
@@ -453,7 +568,9 @@ document.getElementById("reviewForm").addEventListener("submit", function(event)
 
   window.location.href =
     "mailto:thegiftnest@gmail.com?subject=" + subject + "&body=" + body;
+
 });
+
 </script>
 
 </body>
