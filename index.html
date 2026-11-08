@@ -4,508 +4,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gift Nest | Little Gifts, Lovely Memories</title>
-
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-body {
-  background: #f8fcff;
-  color: #46566a;
-  line-height: 1.7;
-}
-
-header {
-  background: #ffffff;
-  padding: 12px 7%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 12px rgba(70,100,130,0.05);
-}
-
-.brand-logo {
-  height: 55px;
-  width: auto;
-  max-width: 180px;
-  object-fit: contain;
-}
-
-nav a {
-  text-decoration: none;
-  color: #52647a;
-  margin-left: 22px;
-  font-size: 14px;
-}
-
-.hero {
-  width: 100%;
-  background: #edf7ff;
-}
-
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 65px 7%;
-  text-align: center;
-  scroll-margin-top: 110px;
-}
-
-.section-title {
-  font-size: 28px;
-  font-weight: 500;
-  color: #526f8c;
-  margin-bottom: 9px;
-}
-
-.section-subtitle {
-  color: #8493a3;
-  margin-bottom: 32px;
-  font-size: 14px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: #edf6fc;
-  padding: 27px 18px;
-  border-radius: 16px;
-  border: 1px solid #e4eff7;
-  transition: 0.3s;
-}
-
-.card:nth-child(2) {
-  background: #fff5ed;
-  border-color: #f8e9dc;
-}
-
-.card:nth-child(3) {
-  background: #f3f0fb;
-  border-color: #eae5f5;
-}
-
-.card:hover {
-  transform: translateY(-3px);
-}
-
-.card-icon {
-  font-size: 25px;
-  margin-bottom: 10px;
-  color: #7997b3;
-}
-
-.card h3 {
-  color: #586f87;
-  font-size: 17px;
-  font-weight: 500;
-  margin-bottom: 7px;
-}
-
-.card p {
-  color: #7d8998;
-  font-size: 14px;
-}
-
-/* Clickable Gift Categories */
-.category-card {
-  display: block;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-  color: inherit;
-  font: inherit;
-  text-decoration: none;
-}
-
-.category-card:focus-visible {
-  outline: 3px solid #789cba;
-  outline-offset: 4px;
-}
-
-.collection {
-  background: #f0f8fd;
-}
-
-.collection-image {
-  display: block;
-  width: 100%;
-  max-width: 1100px;
-  height: auto;
-  margin: 0 auto;
-  border-radius: 15px;
-}
-
-.why-card {
-  background: #ffffff;
-  border: 1px solid #e9eff4;
-}
-
-.why-card:nth-child(2) {
-  background: #f1f6fc;
-}
-
-.why-card:nth-child(3) {
-  background: #fff7f0;
-}
-
-.customer-love {
-  background: #f4f9fd;
-}
-
-.review-box {
-  max-width: 540px;
-  margin: 0 auto;
-  padding: 30px 24px;
-  background: #ffffff;
-  border: 1px solid #e6eef5;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px rgba(80,110,140,0.04);
-}
-
-.review-box p {
-  color: #8291a1;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.stars {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 12px 0 22px;
-}
-
-.stars input {
-  display: none;
-}
-
-.stars label {
-  font-size: 30px;
-  color: #d8dfe6;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.stars label:hover,
-.stars label:hover ~ label {
-  color: #e8b96c;
-}
-
-.stars input:checked ~ label {
-  color: #e8b96c;
-}
-
-.review-box input[type="text"],
-.review-box textarea {
-  width: 100%;
-  padding: 12px 14px;
-  margin: 8px 0 14px;
-  border: 1px solid #e3ebf1;
-  border-radius: 10px;
-  background: #fbfdff;
-  color: #52647a;
-  font-size: 14px;
-  outline: none;
-}
-
-.review-box textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.review-box input:focus,
-.review-box textarea:focus {
-  border-color: #a9c8df;
-}
-
-.field-label {
-  display: block;
-  text-align: left;
-  color: #61758b;
-  font-size: 13px;
-}
-
-.submit-btn,
-.btn {
-  display: inline-block;
-  background: #789cba;
-  color: white;
-  padding: 11px 27px;
-  border: none;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 400;
-}
-
-.submit-btn:hover,
-.btn:hover {
-  background: #6689a8;
-}
-
-.contact {
-  background: #eaf5fc;
-}
-
-.contact p {
-  margin: 12px 0 22px;
-  color: #78899a;
-}
-
-footer {
-  background: #ffffff;
-  color: #72869a;
-  text-align: center;
-  padding: 25px;
-  font-size: 13px;
-  border-top: 1px solid #e8eff5;
-}
-
-.footer-logo {
-  height: 55px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-footer span {
-  color: #e8b27c;
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 0 8px;
-    font-size: 13px;
-  }
-
-  section {
-    padding: 45px 6%;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .review-box {
-    padding: 24px 17px;
-  }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:#f8fcff;color:#46566a;line-height:1.7}
+header{background:#fff;padding:12px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px rgba(70,100,130,.05)}
+.brand-logo{height:55px;width:auto;max-width:180px;object-fit:contain}
+nav a{text-decoration:none;color:#52647a;margin-left:22px;font-size:14px}
+.hero{width:100%;background:#edf7ff}
+.hero img{display:block;width:100%;height:auto}
+section{padding:65px 7%;text-align:center;scroll-margin-top:110px}
+.section-title{font-size:28px;font-weight:500;color:#526f8c;margin-bottom:9px}
+.section-subtitle{color:#8493a3;margin-bottom:32px;font-size:14px}
+.about{background:#fff}
+.about-content{max-width:800px;margin:auto;background:#edf6fc;border:1px solid #e4eff7;border-radius:16px;padding:28px}
+.about-content p{margin-top:12px;color:#64758a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:#edf6fc;padding:27px 18px;border-radius:16px;border:1px solid #e4eff7;transition:.3s}
+.card:nth-child(2){background:#fff5ed;border-color:#f8e9dc}
+.card:nth-child(3){background:#f3f0fb;border-color:#eae5f5}
+.card:hover{transform:translateY(-3px)}
+.card-icon{font-size:25px;margin-bottom:10px;color:#7997b3}
+.card h3{color:#586f87;font-size:17px;font-weight:500;margin-bottom:7px}
+.card p{color:#7d8998;font-size:14px}
+.category-card{display:block;width:100%;text-align:center;cursor:pointer;color:inherit;font:inherit;text-decoration:none}
+.category-card:focus-visible{outline:3px solid #789cba;outline-offset:4px}
+.collection{background:#f0f8fd}
+.collection-image{display:block;width:100%;max-width:1100px;height:auto;margin:0 auto;border-radius:15px}
+.why-card{background:#fff;border:1px solid #e9eff4;text-align:center}
+.why-card:nth-child(2){background:#f1f6fc}
+.why-card:nth-child(3){background:#fff7f0}
+.why-toggle{border:0;background:transparent;cursor:pointer;width:100%;font:inherit;color:inherit}
+.why-toggle .card-icon{font-size:27px}
+.why-toggle h3{font-size:17px}
+.why-description{display:none;margin-top:12px;padding-top:12px;border-top:1px solid #e4edf4;color:#718397;font-size:13px}
+.why-card.open .why-description{display:block;animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.customer-love{background:#f4f9fd}
+.review-box{max-width:540px;margin:0 auto;padding:30px 24px;background:#fff;border:1px solid #e6eef5;border-radius:18px;box-shadow:0 5px 20px rgba(80,110,140,.04)}
+.review-box p{color:#8291a1;font-size:14px;margin-bottom:15px}
+.stars{display:flex;justify-content:center;gap:12px;margin:12px 0 22px}
+.stars input{display:none}
+.stars label{font-size:30px;color:#d8dfe6;cursor:pointer;transition:.2s}
+.stars label:hover,.stars label:hover~label{color:#e8b96c}
+.stars input:checked~label{color:#e8b96c}
+.review-box input[type="text"],.review-box textarea{width:100%;padding:12px 14px;margin:8px 0 14px;border:1px solid #e3ebf1;border-radius:10px;background:#fbfdff;color:#52647a;font-size:14px;outline:none}
+.review-box textarea{min-height:100px;resize:vertical}
+.review-box input:focus,.review-box textarea:focus{border-color:#a9c8df}
+.field-label{display:block;text-align:left;color:#61758b;font-size:13px}
+.submit-btn,.btn{display:inline-block;background:#789cba;color:#fff;padding:11px 27px;border:none;border-radius:25px;text-decoration:none;font-size:14px;cursor:pointer;font-weight:400}
+.submit-btn:hover,.btn:hover{background:#6689a8}
+.contact{background:#eaf5fc}
+.contact p{margin:12px 0 22px;color:#78899a}
+footer{background:#fff;color:#72869a;text-align:center;padding:25px;font-size:13px;border-top:1px solid #e8eff5}
+.footer-logo{height:55px;width:auto;max-width:160px;object-fit:contain;margin-bottom:10px}
+footer span{color:#e8b27c}
+@media(max-width:600px){
+header{flex-direction:column;gap:10px}
+nav a{margin:0 8px;font-size:13px}
+section{padding:45px 6%}
+.section-title{font-size:24px}
+.review-box{padding:24px 17px}
+.about-content{padding:22px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-  <a href="#home">
-    <img class="brand-logo"
-      src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
-      alt="Gift Nest Logo">
-  </a>
-
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#gifts">Gifts</a>
-    <a href="#collection">Collection</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<a href="#home"><img class="brand-logo" src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg" alt="Gift Nest Logo"></a>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gifts">Gifts</a>
+<a href="#collection">Collection</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <section class="hero" id="home">
-  <img
-    src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM.jpeg"
-    alt="Gift Nest - Main Banner">
+<img src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM.jpeg" alt="Gift Nest - Main Banner">
+</section>
+
+<section class="about" id="about">
+<h2 class="section-title">About Gift Nest</h2>
+<p class="section-subtitle">A little place for thoughtful gifting ♡</p>
+<div class="about-content">
+<p>Gift Nest is your little destination for thoughtful gifts and lovely surprises.</p>
+<p>We offer carefully selected gifts for kids, loved ones and special occasions.</p>
+</div>
 </section>
 
 <section id="gifts">
-  <h2 class="section-title">Our Gift Categories</h2>
-  <p class="section-subtitle">
-    Thoughtful little gifts for every special moment.
-  </p>
-
-  <div class="grid">
-
-    <a href="kids.html" class="card category-card">
-      <div class="card-icon">♡</div>
-      <h3>Kids' Gifts</h3>
-      <p>Lovely gifts for little ones.</p>
-    </a>
-
-    <a href="return-gifts.html" class="card category-card">
-      <div class="card-icon">✿</div>
-      <h3>Return Gifts</h3>
-      <p>Make every celebration memorable.</p>
-    </a>
-
-    <a href="special-gifts.html" class="card category-card">
-      <div class="card-icon">✧</div>
-      <h3>Special Gifts</h3>
-      <p>Thoughtful gifts for happy moments.</p>
-    </a>
-
-  </div>
+<h2 class="section-title">Our Gift Categories</h2>
+<p class="section-subtitle">Thoughtful little gifts for every special moment.</p>
+<div class="grid">
+<a href="kids.html" class="card category-card">
+<div class="card-icon">♡</div><h3>Kids' Gifts</h3><p>Lovely gifts for little ones.</p>
+</a>
+<a href="return.html" class="card category-card">
+<div class="card-icon">✿</div><h3>Return Gifts</h3><p>Make every celebration memorable.</p>
+</a>
+<a href="special.html" class="card category-card">
+<div class="card-icon">✧</div><h3>Special Gifts</h3><p>Thoughtful gifts for happy moments.</p>
+</a>
+</div>
 </section>
 
 <section class="collection" id="collection">
-  <h2 class="section-title">Our Collection</h2>
-  <p class="section-subtitle">A little happiness in every gift ♡</p>
-
-  <img
-    class="collection-image"
-    src="WhatsApp%20Image%202026-11-07%20at%2010.31.08%20PM.jpeg"
-    alt="Gift Nest Four Gift Collection">
+<h2 class="section-title">Our Collection</h2>
+<p class="section-subtitle">A little happiness in every gift ♡</p>
+<img class="collection-image" src="WhatsApp%20Image%202026-11-07%20at%2010.31.08%20PM.jpeg" alt="Gift Nest Four Gift Collection">
 </section>
 
 <section>
-  <h2 class="section-title">Why Choose Gift Nest?</h2>
-  <p class="section-subtitle">
-    Little details that make gifting special.
-  </p>
+<h2 class="section-title">Why Choose Gift Nest?</h2>
+<p class="section-subtitle">Little details that make gifting special.</p>
+<div class="grid">
 
-  <div class="grid">
+<div class="card why-card">
+<button class="why-toggle" type="button" aria-expanded="false">
+<div class="card-icon">♡</div><h3>Thoughtfully Chosen</h3>
+</button>
+<p class="why-description">Every gift is selected with care, keeping your special moments in mind.</p>
+</div>
 
-    <div class="card why-card">
-      <div class="card-icon">♡</div>
-      <h3>Thoughtfully Chosen</h3>
-      <p>Every gift selected with care.</p>
-    </div>
+<div class="card why-card">
+<button class="why-toggle" type="button" aria-expanded="false">
+<div class="card-icon">✧</div><h3>Quality You Can Trust</h3>
+</button>
+<p class="why-description">We focus on choosing good-quality gifts and making every order thoughtful.</p>
+</div>
 
-    <div class="card why-card">
-      <div class="card-icon">✧</div>
-      <h3>Quality You Can Trust</h3>
-      <p>Quality matters in every gift.</p>
-    </div>
+<div class="card why-card">
+<button class="why-toggle" type="button" aria-expanded="false">
+<div class="card-icon">🎁</div><h3>Safe Delivery</h3>
+</button>
+<p class="why-description">Every gift is carefully packed so it reaches you safely.</p>
+</div>
 
-    <div class="card why-card">
-      <div class="card-icon">⌁</div>
-      <h3>Safe Delivery</h3>
-      <p>Carefully packed and delivered safely.</p>
-    </div>
-
-  </div>
+</div>
 </section>
 
 <section class="customer-love" id="reviews">
-  <h2 class="section-title">Customer Love ♡</h2>
-  <p class="section-subtitle">Your feedback makes us smile.</p>
-
-  <div class="review-box">
-    <h3 style="color:#617991;font-weight:500;">
-      Share Your Experience
-    </h3>
-    <p>We'd love to hear from you!</p>
-
-    <form id="reviewForm">
-
-      <label class="field-label">Rate your experience *</label>
-
-      <div class="stars">
-        <input type="radio" id="star5" name="rating" value="5" required>
-        <label for="star5">★</label>
-
-        <input type="radio" id="star4" name="rating" value="4">
-        <label for="star4">★</label>
-
-        <input type="radio" id="star3" name="rating" value="3">
-        <label for="star3">★</label>
-
-        <input type="radio" id="star2" name="rating" value="2">
-        <label for="star2">★</label>
-
-        <input type="radio" id="star1" name="rating" value="1">
-        <label for="star1">★</label>
-      </div>
-
-      <label class="field-label" for="reviewName">
-        Your name (optional)
-      </label>
-      <input type="text" id="reviewName"
-        placeholder="Enter your name">
-
-      <label class="field-label" for="reviewText">
-        Your review (optional)
-      </label>
-      <textarea id="reviewText"
-        placeholder="Write your experience..."></textarea>
-
-      <button type="submit" class="submit-btn">
-        Submit Review
-      </button>
-
-    </form>
-  </div>
+<h2 class="section-title">Customer Love ♡</h2>
+<p class="section-subtitle">Your feedback makes us smile.</p>
+<div class="review-box">
+<h3 style="color:#617991;font-weight:500;">Share Your Experience</h3>
+<p>We'd love to hear from you!</p>
+<form id="reviewForm">
+<label class="field-label">Rate your experience *</label>
+<div class="stars">
+<input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+<input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+<input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+<input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+<input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
+</div>
+<label class="field-label" for="reviewName">Your name (optional)</label>
+<input type="text" id="reviewName" placeholder="Enter your name">
+<label class="field-label" for="reviewText">Your review (optional)</label>
+<textarea id="reviewText" placeholder="Write your experience..."></textarea>
+<button type="submit" class="submit-btn">Submit Review</button>
+</form>
+</div>
 </section>
 
 <section class="contact" id="contact">
-  <h2 class="section-title">Let's Make Someone Smile!</h2>
-  <p>Have a gift in mind? Get in touch with us.</p>
-  <a href="mailto:thegiftnest@gmail.com" class="btn">
-    Contact Us
-  </a>
+<h2 class="section-title">Let's Make Someone Smile!</h2>
+<p>Have a gift in mind? Get in touch with us.</p>
+<a href="mailto:thegiftnest@gmail.com" class="btn">Contact Us</a>
 </section>
 
 <footer>
-  <img
-    class="footer-logo"
-    src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg"
-    alt="Gift Nest Logo">
-
-  <p>
-    © 2026 Gift Nest. Made with
-    <span>♡</span> for every happy moment.
-  </p>
+<img class="footer-logo" src="WhatsApp%20Image%202026-11-07%20at%2010.03.25%20PM%20%281%29.jpeg" alt="Gift Nest Logo">
+<p>© 2026 Gift Nest. Made with <span>♡</span> for every happy moment.</p>
 </footer>
 
 <script>
-// Customer Review Form
-document.getElementById("reviewForm").addEventListener("submit", function(event) {
+document.querySelectorAll(".why-toggle").forEach(function(button){
+button.addEventListener("click",function(){
+const card=this.closest(".why-card");
+const isOpen=card.classList.toggle("open");
+this.setAttribute("aria-expanded",isOpen);
+});
+});
 
-  event.preventDefault();
-
-  const rating = document.querySelector('input[name="rating"]:checked');
-
-  if (!rating) {
-    alert("Please select a star rating.");
-    return;
-  }
-
-  const name = document.getElementById("reviewName").value.trim() || "Not shared";
-  const review = document.getElementById("reviewText").value.trim() || "No written review";
-
-  const subject = encodeURIComponent("Gift Nest Customer Review");
-
-  const body = encodeURIComponent(
-    "Rating: " + rating.value + "/5 stars\n" +
-    "Name: " + name + "\n" +
-    "Review: " + review
-  );
-
-  window.location.href =
-    "mailto:thegiftnest@gmail.com?subject=" + subject + "&body=" + body;
-
+document.getElementById("reviewForm").addEventListener("submit",function(event){
+event.preventDefault();
+const rating=document.querySelector('input[name="rating"]:checked');
+if(!rating){alert("Please select a star rating.");return;}
+const name=document.getElementById("reviewName").value.trim()||"Not shared";
+const review=document.getElementById("reviewText").value.trim()||"No written review";
+const subject=encodeURIComponent("Gift Nest Customer Review");
+const body=encodeURIComponent("Rating: "+rating.value+"/5 stars\nName: "+name+"\nReview: "+review);
+window.location.href="mailto:thegiftnest@gmail.com?subject="+subject+"&body="+body;
 });
 </script>
-
 </body>
 </html>
